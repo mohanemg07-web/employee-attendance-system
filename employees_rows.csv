@@ -1,0 +1,16 @@
+id,employee_code,email,full_name,role,manager_id,department,is_active,created_at,updated_at
+1,EMP001,mohanchinni07@gmail.com,Pradeep,ADMIN,,Executive,true,2026-04-30 19:53:23.109522+00,2026-05-05 22:48:27.802476+00
+2,EMP002,r04352789@gmail.com,Deepika,MANAGER,1,Engineering,true,2026-04-30 19:53:23.109522+00,2026-05-05 22:49:10.231963+00
+3,EMP003,mr.mygandhi@gmail.com,Amit Patel,MANAGER,1,Operations,true,2026-04-30 19:53:23.109522+00,2026-05-07 13:34:00.004796+00
+4,EMP004,pragathim581@gmail.com,Sneha Reddy,MANAGER,2,Engineering,true,2026-04-30 19:53:23.109522+00,2026-05-07 13:35:24.949844+00
+5,EMP005,prabhas9121377@gmail.com,Vikram Singh,MANAGER,2,Engineering,true,2026-04-30 19:53:23.109522+00,2026-05-07 13:48:06.540387+00
+6,EMP006,nani9818919@gmail.com,Ananya Gupta,EMPLOYEE,4,Engineering,true,2026-04-30 19:53:23.109522+00,2026-05-07 13:48:41.196724+00
+7,EMP007,pragathi7780@gmail.com,Rahul Verma,EMPLOYEE,4,Engineering,true,2026-04-30 19:53:23.109522+00,2026-05-07 13:55:15.131014+00
+8,EMP008,chinnari77806@gmail.com,Kavitha Nair,EMPLOYEE,5,Engineering,true,2026-04-30 19:53:23.109522+00,2026-05-07 14:02:47.941632+00
+9,EMP009,mudavthpragathi@gmail.com,Suresh Iyer,EMPLOYEE,3,Operations,true,2026-04-30 19:53:23.109522+00,2026-05-07 14:07:01.176472+00
+10,EMP010,pragathi8142@gmail.com,Meera Joshi,EMPLOYEE,3,Operations,true,2026-04-30 19:53:23.109522+00,2026-05-07 14:09:52.738604+00
+11,EMP011,mohanemg07@gmail.com,E Mohan Gandhi,MANAGER,1,Sales,true,2026-04-30 20:33:10+00,2026-05-05 22:21:11.225649+00
+12,EMP012,eshlavathmohannayak@gmail.com,Ramesh,EMPLOYEE,11,Sales,true,2026-05-02 21:24:53.293322+00,2026-05-04 15:48:20.420245+00
+13,EMP013,ramcharan91213@gmail.com,Ram Charan,EMPLOYEE,11,Sales,true,2026-05-05 22:24:42.75532+00,2026-05-05 22:24:42.75532+00
+14,EMP014,alluarjun9121377@gmail.com,Allu Arjun,EMPLOYEE,11,Sales,true,2026-05-05 22:27:32.820039+00,2026-05-05 22:27:32.820039+00
+15,EMP015,chinnim197@gmail.com,Kavya,EMPLOYEE,5,Engineering,true,2026-05-05 22:44:46.75011+00,2026-05-07 14:10:34.610734+00

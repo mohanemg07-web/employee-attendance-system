@@ -1,0 +1,77 @@
+# ──────────────────────────────────────────────────────────
+# Render Blueprint — Infrastructure as Code
+# Deploy: Connect this repo to Render, it auto-detects render.yaml
+# ──────────────────────────────────────────────────────────
+
+services:
+  # ── FastAPI Backend ─────────────────────────────────────
+  - type: web
+    name: attendtrack-api
+    runtime: python
+    region: oregon
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        sync: false  # Set manually in Render dashboard (Supabase pooler URL)
+      - key: REDIS_URL
+        fromService:
+          name: attendtrack-redis
+          type: redis
+          property: connectionString
+      - key: JWT_SECRET_KEY
+        generateValue: true  # Render auto-generates a secure random string
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: GOOGLE_REDIRECT_URI
+        value: https://attendtrack-api.onrender.com/auth/callback
+      - key: MATRIX_COSEC_BASE_URL
+        sync: false
+      - key: MATRIX_COSEC_USERNAME
+        value: SA
+      - key: MATRIX_COSEC_PASSWORD
+        sync: false
+      - key: FRONTEND_URL
+        value: https://attendtrack.vercel.app
+      - key: DEMO_MODE
+        value: "false"
+      - key: PYTHON_VERSION
+        value: "3.10.12"
+    healthCheckPath: /health
+
+  # ── Celery Background Worker ────────────────────────────
+  - type: worker
+    name: attendtrack-worker
+    runtime: python
+    region: oregon
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: celery -A app.tasks.sync:celery_app worker --beat --loglevel=info --concurrency=2
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: REDIS_URL
+        fromService:
+          name: attendtrack-redis
+          type: redis
+          property: connectionString
+      - key: JWT_SECRET_KEY
+        sync: false
+      - key: MATRIX_COSEC_BASE_URL
+        sync: false
+      - key: MATRIX_COSEC_USERNAME
+        value: SA
+      - key: MATRIX_COSEC_PASSWORD
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.10.12"
+
+  # ── Redis Instance ──────────────────────────────────────
+  - type: redis
+    name: attendtrack-redis
+    region: oregon
+    plan: free
+    maxmemoryPolicy: allkeys-lru

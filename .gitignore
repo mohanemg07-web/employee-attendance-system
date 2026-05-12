@@ -1,0 +1,133 @@
+# ═══════════════════════════════════════════════════════════
+# .gitignore — Employee Attendance Tracking System
+# ═══════════════════════════════════════════════════════════
+
+# ── SECRETS (NEVER COMMIT) ──────────────────────────────────
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+*.key
+*.pem
+*.p12
+*.pfx
+secrets/
+
+# ── Python / Backend ────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+backend/.venv/
+
+# Local SQLite dev database (auto-created by the app)
+*.db
+*.sqlite
+*.sqlite3
+attendance_dev.db
+
+# Alembic
+alembic.ini.local
+
+# Celery
+celerybeat-schedule
+celerybeat-schedule.db
+celerybeat.pid
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ── Node.js / Frontend ──────────────────────────────────────
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite build output
+dist/
+frontend/dist/
+build/
+frontend/build/
+
+# Vite cache
+.vite/
+frontend/.vite/
+
+# ── Logs ────────────────────────────────────────────────────
+logs/
+*.log
+*.log.*
+
+# ── OS-generated files ──────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ── IDE / Editor ────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ── Docker ──────────────────────────────────────────────────
+# Keep docker-compose.yml but ignore local overrides
+docker-compose.override.yml
+docker-compose.local.yml
+.dockerignore
+
+# ── Temporary / Upload files ────────────────────────────────
+uploads/
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# ── Sample / test data (not for production repos) ───────────
+# Uncomment these if you don't want sample CSVs in your repo
+# *.csv
+# *.xlsx
+# sample-data/
+
+# ── Cache ───────────────────────────────────────────────────
+.cache/
+.parcel-cache/
