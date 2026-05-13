@@ -67,7 +67,7 @@ services:
       - key: MATRIX_COSEC_PASSWORD
         sync: false
       - key: PYTHON_VERSION
-        value: "3.10.12"
+        value: "3.11.9"
 
   # ── Redis Instance ──────────────────────────────────────
   - type: redis
