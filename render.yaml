@@ -39,7 +39,7 @@ services:
       - key: DEMO_MODE
         value: "false"
       - key: PYTHON_VERSION
-        value: "3.10.12"
+        value: "3.11.9"
     healthCheckPath: /health
 
   # ── Celery Background Worker ────────────────────────────
