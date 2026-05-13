@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => ({
     headers: {
       'Cache-Control': 'no-store',
     },
-    // Dev-only proxy — in production, VITE_API_BASE_URL points directly to Render
+    // Dev-only proxy — in production, VITE_API_URL points directly to Render
     ...(mode === 'development' && {
       proxy: {
         // Proxy all /auth/* routes — safe now that Google OAuth (with its
