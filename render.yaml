@@ -35,7 +35,7 @@ services:
       - key: MATRIX_COSEC_PASSWORD
         sync: false
       - key: FRONTEND_URL
-        value: https://attendtrack.vercel.app
+        value: https://employee-attendance-system-pearl.vercel.app
       - key: DEMO_MODE
         value: "false"
       - key: PYTHON_VERSION

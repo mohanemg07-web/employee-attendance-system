@@ -71,6 +71,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         settings.FRONTEND_URL,
+        "https://employee-attendance-system-pearl.vercel.app",
         "http://localhost:5173",
         "http://localhost:3000",
     ],
