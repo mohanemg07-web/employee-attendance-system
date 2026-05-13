@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './styles/index.css'
 import { ErrorBoundary } from './components/ErrorBoundary'
-import { ThemeProvider } from './lib/ThemeProvider'
+import { ThemeProvider } from './lib/ThemeProvider.jsx'
 
 console.log("BUILD VERSION:", import.meta.env.VITE_APP_VERSION);
 
